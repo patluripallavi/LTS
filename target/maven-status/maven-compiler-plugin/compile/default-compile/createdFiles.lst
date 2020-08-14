@@ -1,4 +1,10 @@
+com\example\LTS\model\Extras.class
 com\example\LTS\HomeController\HomeController.class
+com\example\LTS\model\Fixtures.class
 com\example\LTS\HomeController\Rest.class
+com\example\LTS\model\Schedule.class
+com\example\LTS\model\Scorecard.class
+com\example\LTS\model\Wickets.class
 com\example\LTS\LiveTournamentScoreApplication.class
+com\example\LTS\model\Bowling.class
 com\example\LTS\model\Admin.class
