@@ -14,13 +14,13 @@
 	<div id="container" style="height: 400px"></div>
 	
 	<script th:inline="javascript">	
-	var t1 = /*[[${t1}]]*/ 't1';
-	var t2 = /*[[${t2}]]*/ 't2';
+	var t1 = /*[[${t1}]]*/ 't11';
+	var t2 = /*[[${t2}]]*/ 't22';
 	var t3=parseInt(t1);
 	var t4=parseInt(t2);
-	
-	console.log(t1);
-	console.log("hello");
+		
+	console.log(t3);
+	console.log(t4);
 		Highcharts.chart('container', {
 			chart : {
 				type : 'pie',
@@ -50,7 +50,7 @@
 			series : [ {
 				type : 'pie',
 				name : 'Ratio',
-				data : [ [ 'Team1 Performance', [[t3]] ], [ 'Team2 Performance', [[t4]] ]  ]
+				data : [ [ 'Team1 Performance', [[parseInt(t1)]] ], [ 'Team2 Performance', [[parseInt(t2)]] ]  ]
 			} ]
 		});
 	    </script>

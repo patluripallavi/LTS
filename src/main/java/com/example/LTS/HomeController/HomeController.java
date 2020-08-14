@@ -352,7 +352,8 @@ public class HomeController
 				List<String> M = new ArrayList<String>();
 				List<String> W = new ArrayList<String>();
 				List<String> ER = new ArrayList<String>();
-				
+				String home="";
+				String away="";
 				int aPer=0;
 				int bPer=0;
 				
@@ -386,6 +387,9 @@ public class HomeController
 								if(value.get(k).get("type").equals("Batsman"))
 								{
 									balls.add(value.get(k).get("B"));
+									fours.add(value.get(k).get("4s"));
+									sixes.add(value.get(k).get("6s"));
+									strikeRates.add(value.get(k).get("SR"));
 									batsmenRuns.add(value.get(k).get("R"));
 								}
 								else if(value.get(k).get("type").equals("Bowler"))
@@ -394,9 +398,7 @@ public class HomeController
 								}
 								
 								
-								fours.add(value.get(k).get("4s"));
-								sixes.add(value.get(k).get("6s"));
-								strikeRates.add(value.get(k).get("SR"));
+								
 								
 
 								LinkedHashMap<String, String> score=value.get(k);
@@ -437,8 +439,9 @@ public class HomeController
 						}
 						Object test_obj = s.get("RCB Innings");
 						
-
-						String teama=(String)ob.get("event_home_team")+" vs "+(String) ob.get("event_away_team");
+                        home=(String)ob.get("event_home_team");
+                        away=(String)ob.get("event_away_team");
+						String teama=home+" vs "+away;
 
 						String a=(String)ob.get("event_home_final_result");
 						String b=(String)ob.get("event_away_final_result");
@@ -499,6 +502,8 @@ public class HomeController
 					cricket.addObject("ER",ER);
 					cricket.addObject("team1",aPer);
 					cricket.addObject("team2",bPer);
+					cricket.addObject("home",home);
+					cricket.addObject("away",away);
 				
 				}
 				}else 
